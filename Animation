@@ -1,0 +1,101 @@
+import simplegui
+import random
+# Create Global Variable
+global x
+global z
+z=0
+x=0
+y=-25
+
+def draw_handler(canvas):
+    # Draw Here!
+    global x
+    global y
+    global z
+    z+=4
+    x+=3
+    #cloud
+    canvas.draw_circle((x - 460, 160), 30, 1, "black","white")
+    canvas.draw_circle((x - 500, 160), 30, 1, "black","white")
+    canvas.draw_circle((x - 420, 160), 30, 1, "black","white")
+    canvas.draw_circle((x - 460, 130), 30, 1, "black","white")
+    
+    canvas.draw_circle((x - 300, 80), 30, 1, "black","white")
+    canvas.draw_circle((x - 340, 80), 30, 1, "black","white")
+    canvas.draw_circle((x - 260, 80), 30, 1, "black","white")
+    canvas.draw_circle((x - 300, 50), 30, 1, "black","white")
+    
+    canvas.draw_circle((x - 600, 80), 30, 1, "black","white")
+    canvas.draw_circle((x - 640, 80), 30, 1, "black","white")
+    canvas.draw_circle((x - 560, 80), 30, 1, "black","white")
+    canvas.draw_circle((x - 600, 50), 30, 1, "black","white")
+    
+    canvas.draw_circle((x - 700, 60), 30, 1, "black","white")
+    canvas.draw_circle((x - 740, 60), 30, 1, "black","white")
+    canvas.draw_circle((x - 660, 60), 30, 1, "black","white")
+    canvas.draw_circle((x - 700, 30), 30, 1, "black","white")
+    
+    canvas.draw_circle((x - 800, 80), 30, 1, "black","white")
+    canvas.draw_circle((x - 840, 80), 30, 1, "black","white")
+    canvas.draw_circle((x - 760, 80), 30, 1, "black","white")
+    canvas.draw_circle((x - 800, 50), 30, 1, "black","white")
+    
+    canvas.draw_polygon([(0,550),(600,550),(600,600),(0,600)], 1, "black","black")
+    
+    canvas.draw_polygon([(10,570),(50,570),(50,580),(10,580)], 1, "white","white")
+    
+    canvas.draw_polygon([(80,570),(120,570),(120,580),(80,580)], 1, "white","white")
+    
+    canvas.draw_polygon([(150,570),(190,570),(190,580),(150,580)], 1, "white","white")
+    
+    canvas.draw_polygon([(220,570),(260,570),(260,580),(220,580)], 1, "white","white")
+    
+    canvas.draw_polygon([(290,570),(330,570),(330,580),(290,580)], 1, "white","white")
+    
+    canvas.draw_polygon([(360,570),(400,570),(400,580),(360,580)], 1, "white","white")
+    
+    canvas.draw_polygon([(430,570),(470,570),(470,580),(430,580)], 1, "white","white")
+    
+    canvas.draw_polygon([(500,570),(540,570),(540,580),(500,580)], 1, "white","white")
+    
+    canvas.draw_polygon([(570,570),(610,570),(610,580),(570,580)], 1, "white","white")
+    
+    for i in range(120):
+        xdot=random.randint(1,600)
+        ydot=random.randint(1,1445)
+        canvas.draw_line((xdot,ydot),(xdot,ydot+10),5, "blue")
+    canvas.draw_circle((x,400), 17, 1, "white", "white")
+    x=x+1
+    #stickmn
+    canvas.draw_line((x,400), (x,500), 6, "white")
+    canvas.draw_line((x,500), (x-30,550), 6, "white")
+    canvas.draw_line((x,500), (x+30,650), 6, "white")
+    canvas.draw_line((x-30,550), (x+30,450), 6, "white")
+    
+    canvas.draw_line((x,400), (x,500), 6, "white")
+    canvas.draw_line((x,500), (x+30,550), 6, "white")
+    canvas.draw_line((x,500), (x-30,550), 6, "white")
+    canvas.draw_line((x+30,450), (x-30,450), 6, "white")
+    
+    #moon:
+    canvas.draw_circle ((x+1,0), 200, 5, "black", "gray")
+    canvas.draw_circle ((x+100,0), 10, 5, "white", "white")
+    canvas.draw_circle ((x+80,60), 10, 5, "white", "white")
+    canvas.draw_circle ((x+30,4), 10, 5, "white", "white")
+    canvas.draw_circle ((x+20,100), 10, 5, "white", "white")
+    canvas.draw_circle ((x+150,50), 10, 5, "white", "white")
+    canvas.draw_circle ((x+100,100), 10, 5, "white", "white")
+    canvas.draw_circle ((x+50,150), 10, 5, "white", "white")
+    canvas.draw_circle ((x+100,0), 10, 5, "white", "white")
+    canvas.draw_circle ((x+80,60), 10, 5, "white", "white")
+    canvas.draw_circle ((x+30,4), 10, 5, "white", "white")
+    canvas.draw_circle ((x+20,100), 10, 5, "white", "white")
+    canvas.draw_circle ((x+150,50), 10, 5, "white", "white")
+    canvas.draw_circle ((x+100,100), 10, 5, "white", "white")
+    canvas.draw_circle ((x+10,150), 10, 5, "white", "white")
+    
+    #car
+    canvas.draw_polygon([(z-60,450),(z+100,450),(z+100,560),(z-60,560)], 1,"black", "blue")
+    canvas.draw_polygon([(z+100,470),(z+110,470),(z+180,560),(z+100,560)], 1,"white", "white")
+    canvas.draw_circle ((z+10,560), 20, 5, "lightblue", "lightblue")
+    canvas.draw_circle ((z+125,560), 20, 5, "lightblue", "lightblue")
